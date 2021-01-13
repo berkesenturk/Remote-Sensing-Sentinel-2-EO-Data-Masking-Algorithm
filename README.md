@@ -108,13 +108,13 @@ However, the output will not satisfy the user because water bodies are needed to
 - Jupyter Notebook Sentinel 2 NDVI Result
 
 
-![ndvi_result](./readme_images/ndvi_result_example.PNG)
+![ndvi_result](./readme_images/ndvi_result.PNG)
 
 
 - Jupyter Notebook Landsat 8 NDWI Result
 
 
-![ndvi_result](./readme_images/ndwi_result_example.PNG)
+![ndvi_result](./readme_images/ndwi_result.PNG)
 
 ---
 
