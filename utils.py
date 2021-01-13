@@ -6,7 +6,7 @@ from skimage.viewer import ImageViewer
 from tifffile import * 
 import matplotlib.patches as mpatches   
 
-def create_ndwi(swir_band,nir_band):
+def create_ndwi(green_band,nir_band):
     """
     -----------
     Definition
@@ -18,15 +18,15 @@ def create_ndwi(swir_band,nir_band):
     ------------
 
     nir_band : tiff file
-    swir_band : tiff file #7.band swir_2
-
+    green_band : tiff file 
+    
     output
     ------
 
     img : tiff file 
     """
     np.seterr(divide='ignore', invalid='ignore')
-    ndwi = (nir_band - swir_band) / (nir_band + swir_band)
+    ndwi = (nir_band - green_band) / (nir_band + green_band)
     ndwi= np.nan_to_num(ndwi)
     return ndwi
     
@@ -54,7 +54,7 @@ def create_ndvi(nir_band,red_band):
     ndvi= np.nan_to_num(ndvi)
     return ndvi
 
-def water_mask_ndvi(ndvi_band,nir_band):
+def water_mask_ndvi_for_landsat_8(ndvi_band,nir_band):
     """
     -----------
     Definition
@@ -82,7 +82,35 @@ def water_mask_ndvi(ndvi_band,nir_band):
     img = ndvi_in_uint[:, :, 1]
     return img
 
-def water_mask_ndwi(ndwi_band,nir_band):
+def water_mask_ndvi_for_sentinel_2(ndvi_band,nir_band):
+    """
+    -----------
+    Definition
+    -----------
+
+    Mask for water bodies
+
+    input params
+    ------------
+
+    ndvi_band : tiff file
+    nir_band : tiff file
+
+    output
+    ------
+
+    img : tiff file 
+    """
+    
+    for x in range(len(ndvi_band)):
+        for y in range(x):
+            if (ndvi_band[x][y]!=0 and nir_band[x][y]<=0.1): 
+                ndvi_band[x][y]=0
+    
+    img = ndvi_band
+    return img
+    
+def water_mask_ndwi_for_landsat_8(ndwi_band,nir_band):
     """
     -----------
     Definition
@@ -110,6 +138,34 @@ def water_mask_ndwi(ndwi_band,nir_band):
     img = ndwi_in_uint[:, :, 1]
     return img
 
+def water_mask_ndwi_for_sentinel_2(ndwi_band,nir_band):
+    """
+    -----------
+    Definition
+    -----------
+
+    Mask for water bodies
+
+    input params
+    ------------
+
+    ndvi_band : tiff file
+    nir_band : tiff file
+
+    output
+    ------
+
+    img : tiff file 
+    """
+    
+    for x in range(len(ndwi_band)):
+        for y in range(x):
+            if (ndwi_band[x][y]!=0 and nir_band[x][y]<=0.1): 
+                ndwi_band[x][y]=0
+    
+    img = ndwi_band
+    return img
+    
 if __name__=='__main__':
     red = io.imread('test_images_tiff/B4.tif')
     nir = io.imread('test_images_tiff/B5.tif')
