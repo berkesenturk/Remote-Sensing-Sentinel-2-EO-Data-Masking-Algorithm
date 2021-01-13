@@ -59,6 +59,7 @@ To use the repository it needs to be installed and runned within the same direct
 To conduct index calculations within the arrays of the image, corresponding bands needs to be introduced. After that the functions can be called as follows,
 
 ---
+
 ## Example for NDVI
 
 ```python
@@ -79,7 +80,9 @@ utils.water_mask_ndvi_for_landsat_8(ndvi_band=<Use the variable after the calcul
 ```python
 utils.water_mask_ndvi_for_sentinel_2(ndvi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
 ```
+
 ---
+
 ## Example for NDWI
 
 ```python
@@ -103,7 +106,6 @@ utils.water_mask_ndvi_for_sentinel_2(ndwi_band=<Use the variable after the calcu
 
 ## Results
 
-
 - Jupyter Notebook Sentinel 2 NDVI Result
 
 
@@ -116,13 +118,22 @@ utils.water_mask_ndvi_for_sentinel_2(ndwi_band=<Use the variable after the calcu
 ![ndvi_result](./readme_images/ndwi_result_example.PNG)
 
 ---
+
 ## Data Retrieval
 
-If you are not satisfied the training data and also you want to contribute the project, you may use ```data_download_script_from_gee``` which coded in javascript language. However this script should be used within Google Earth Engine(GEE) Platform.
+If you are not satisfied the training data and also you want to contribute the project, you may use ```data_download_script_from_gee``` which coded in javascript language. However this script should be runned within Google Earth Engine(GEE) Platform.
 
 If you don't want to use script and connect to GEE easily you can use this link and you may use the same code without losing time :)
 
 ```https://code.earthengine.google.com/?accept_repo=users/berkesenturk11/data_downloader```
+
+To clip the satellite images, ```FAO GAUL: Global Administrative Unit Layers 2015, Second-Level Administrative Units``` dataset is used for obtaining satellite images of the administrative unites
+
+### Example of GAUL dataset 
+
+Artvin - Hopa (Second Administrative Level)
+
+![gaul](./readme_images/gaul.PNG)
 
 ---
 ## Compatible Data Sources
