@@ -100,6 +100,22 @@ utils.water_mask_ndvi_for_landsat_8(ndwi_band=<Use the variable after the calcul
 utils.water_mask_ndvi_for_sentinel_2(ndwi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
 ```
 ---
+
+## Results
+
+
+- Jupyter Notebook Sentinel 2 NDVI Result
+
+
+![ndvi_result](./readme_images/ndvi_result_example.PNG)
+
+
+- Jupyter Notebook Landsat 8 NDWI Result
+
+
+![ndvi_result](./readme_images/ndwi_result_example.PNG)
+
+---
 ## Data Retrieval
 
 If you are not satisfied the training data and also you want to contribute the project, you may use ```data_download_script_from_gee``` which coded in javascript language. However this script should be used within Google Earth Engine(GEE) Platform.
