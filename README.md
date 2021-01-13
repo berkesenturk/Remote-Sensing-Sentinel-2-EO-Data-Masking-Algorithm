@@ -63,7 +63,7 @@ To conduct index calculations within the arrays of the image, corresponding band
 ## Example for NDVI
 
 ```python
-utils.create_ndvi(red_band=<The-location-of-the-green-band>,nir_band=<The-location-of-the-green-band>)
+>>> utils.create_ndvi(red_band=<The-location-of-the-green-band>,nir_band=<The-location-of-the-green-band>)
 ```
 
 However, the output will not satisfy the user because water bodies are needed to be masked.
@@ -71,14 +71,13 @@ However, the output will not satisfy the user because water bodies are needed to
 - To mask water bodies for Landsat 8 satellite image,
 
 ```python
-
-utils.water_mask_ndvi_for_landsat_8(ndvi_band=<Use the variable after the calculation of the NDVI>,nir_band=<The-location-of-the-green-band>)
+>>> utils.water_mask_ndvi_for_landsat_8(ndvi_band=<Use the variable after the calculation of the NDVI>,nir_band=<The-location-of-the-green-band>)
 ```
 
 - Or, to mask water bodies for Sentinel 2 satellite image,
 
 ```python
-utils.water_mask_ndvi_for_sentinel_2(ndvi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
+>>> utils.water_mask_ndvi_for_sentinel_2(ndvi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
 ```
 
 ---
@@ -86,7 +85,7 @@ utils.water_mask_ndvi_for_sentinel_2(ndvi_band=<Use the variable after the calcu
 ## Example for NDWI
 
 ```python
-utils.create_ndwi(green_band=<The-location-of-the-green-band>,nir_band=<The-location-of-the-NIR-band>)
+>>> utils.create_ndwi(green_band=<The-location-of-the-green-band>,nir_band=<The-location-of-the-NIR-band>)
 ```
 
 However, the output will not satisfy the user because water bodies are needed to be masked.
@@ -94,13 +93,13 @@ However, the output will not satisfy the user because water bodies are needed to
 - To mask water bodies for Landsat 8 satellite image,
 
 ```python
-utils.water_mask_ndvi_for_landsat_8(ndwi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
+>>> utils.water_mask_ndvi_for_landsat_8(ndwi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
 ```
 
 - Or, to mask water bodies for Sentinel 2 satellite image,
 
 ```python
-utils.water_mask_ndvi_for_sentinel_2(ndwi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
+>>> utils.water_mask_ndvi_for_sentinel_2(ndwi_band=<Use the variable after the calculation of the NDWI>,nir_band=<The-location-of-the-nir-band>)
 ```
 ---
 
