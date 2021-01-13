@@ -1,4 +1,4 @@
-# Index Processor
+# Index Creator
 
 Index Processor is a pilot repository for solving common Remote Sensing problems. In this assignment, the creation of NDVI and NDWI indices and most importantly the masking from water bodies were studied.
 
