@@ -44,6 +44,7 @@ In this repository following libraries are used and needs to be installed,
 - matplotlib 
 - skimage
 - tifffile
+- imagecodecs
 
 To install the repository from Terminal through using Git,
 
